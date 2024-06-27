@@ -21,7 +21,7 @@ import { SignalsService } from '@app/services/signals.service';
     FormsModule,
   ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'], // Fix: Change 'styleUrl' to 'styleUrls'
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   username: string = '';
