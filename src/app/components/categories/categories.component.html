@@ -1,0 +1,16 @@
+<h2>Categories</h2>
+<form (ngSubmit)="addCategory()">
+  <mat-form-field appearance="fill">
+    <mat-label>New Category</mat-label>
+    <input matInput [(ngModel)]="newCategory" name="category" required />
+  </mat-form-field>
+  <button mat-raised-button type="submit">Add Category</button>
+</form>
+<ul>
+  <li *ngFor="let category of categories()">
+    {{ category }}
+    <button mat-icon-button (click)="removeCategory(category)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </li>
+</ul>

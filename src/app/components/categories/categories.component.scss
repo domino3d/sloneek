@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  gap: 10px;
+  flex-flow: wrap;
+  align-items: center;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+button {
+  margin-left: 8px;
+}

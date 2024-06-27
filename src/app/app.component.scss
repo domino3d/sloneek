@@ -1,0 +1,37 @@
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+nav {
+  gap: 10px;
+  display: flex;
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+  }
+  a:last-child {
+    font-weight: bold;
+  }
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+mat-toolbar {
+  background-color: grey;
+}
+
+.layout {
+  margin-top: 100px;
+  padding: 20px;
+}

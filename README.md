@@ -1,27 +1,114 @@
-# ExpensesTracker
+# Expenses Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+## Overview
 
-## Development server
+Expenses Tracker is a simple web application developed using Angular. It allows users to manage their budget by recording expenses and incomes, defining categories, and viewing recorded transactions. The application uses Angular Material for the UI components and Angular Signals for state management. All data is stored locally in the browser's `localStorage`, and no backend server is required.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **User Authentication**: Simple user login using credentials stored in a static JSON file.
+- **Category Management**: Users can define new categories for their expenses and incomes and remove existing categories.
+- **Record Transactions**: Users can record expenses and incomes with details such as date, information, value, and category.
+- **Transaction Table**: View all recorded transactions in a tabular format.
+- **Data Persistence**: All data is stored locally using `localStorage`.
+- **Logout Functionality**: Users can log out, which clears their session data.
+- **Responsive Design**: The application is styled using Angular Material to be responsive and user-friendly.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Included Components
 
-## Build
+### Login Component
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Allows users to log in with a username and password.
+- User credentials are stored in a static JSON file (`assets/users.json`).
 
-## Running unit tests
+### Dashboard Component
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Main landing page after login.
+- Contains links to manage categories and record transactions.
 
-## Running end-to-end tests
+### Categories Component
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Users can add new categories.
+- Users can remove existing categories.
+- Categories are stored in `localStorage`.
 
-## Further help
+### Transactions Component
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Users can record new transactions (expenses and incomes).
+- Form includes fields for date, information, value, category, and type (expense/income).
+- Transactions are stored in `localStorage`.
+
+### Transactions Table Component
+
+- Displays all recorded transactions in a table format.
+- Uses Angular Material's table component for styling.
+
+### Navigation Bar
+
+- A fixed navigation bar at the top with links to different pages (Dashboard, Categories, Transactions, Logout).
+- The navigation bar dynamically updates based on the user's login state.
+
+## Setup and Installation
+
+1. **Run the application:**
+   ng serve
+   Navigate to http://localhost:4200 in your web browser.
+
+### Project Structure
+
+expenses-tracker/
+├── src/
+│ ├── app/
+│ │ ├── auth.guard.ts
+│ │ ├── dashboard/
+│ │ ├── categories/
+│ │ ├── transactions/
+│ │ ├── transactions-table/
+│ │ ├── login/
+│ │ ├── models/
+│ │ │ └── category.enum.ts
+│ │ ├── services/
+│ │ │ └── signals.service.ts
+│ │ ├── app-routing.module.ts
+│ │ ├── app.module.ts
+│ │ ├── app.component.ts
+│ │ ├── app.component.html
+│ │ ├── app.component.css
+│ ├── assets/
+│ │ ├── users.json
+│ ├── index.html
+│ ├── main.ts
+├── angular.json
+├── package.json
+├── README.md
+
+### Data Storage
+
+User data, transactions, and categories are stored locally in the browser's localStorage.
+
+### Usage
+
+Login:
+Use one of the predefined user credentials from assets/users.json to log in.
+admin/admin
+
+## Dashboard:
+
+Navigate to the Dashboard after logging in. From here, you can manage categories or record transactions.
+Manage Categories:
+
+Add new categories or remove existing ones. All categories are stored in localStorage.
+Record Transactions:
+
+Record new transactions with details like date, info, value, category, and type (expense/income).
+View all recorded transactions in a table format.
+
+## Logout:
+
+Use the logout button in the navigation bar to clear session data and return to the login page.
+Dependencies
+Angular: The main framework used for building the application.
+Angular Material: For UI components and styling.
+Angular Signals: For state management.
+RxJS: For reactive programming.
+TypeScript: The primary language for development.

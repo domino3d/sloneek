@@ -1,0 +1,21 @@
+mat-table {
+  width: 100%;
+}
+
+mat-header-cell,
+mat-cell {
+  padding: 8px;
+}
+
+mat-header-cell {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.expense {
+  color: red;
+}
+
+.income {
+  color: green;
+}
