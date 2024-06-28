@@ -13,7 +13,20 @@ import { SignalsService } from '@services/signals.service';
 export class TransactionsTableComponent {
   transactions = this.signalsService.transactions;
 
+  // todo: could be moved to a separate file
   displayedColumns: string[] = ['date', 'info', 'value', 'category', 'type'];
 
   constructor(public signalsService: SignalsService) {}
+
+  get totalExpenses(): number {
+    return this.transactions()
+      .filter((transaction) => transaction.value && transaction.value < 0)
+      .reduce((acc, transaction) => acc + (transaction.value || 0), 0);
+  }
+
+  get totalIncomes(): number {
+    return this.transactions()
+      .filter((transaction) => transaction.value && transaction.value > 0)
+      .reduce((acc, transaction) => acc + (transaction.value || 0), 0);
+  }
 }

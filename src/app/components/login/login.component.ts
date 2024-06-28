@@ -8,6 +8,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { SignalsService } from '@app/services/signals.service';
+import { User } from '@app/models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -26,14 +27,14 @@ import { SignalsService } from '@app/services/signals.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  users: any[] = [];
+  users: User[] = [];
 
   constructor(
     private router: Router,
     private http: HttpClient,
     private signalsService: SignalsService
   ) {
-    this.http.get<any[]>('/assets/users.json').subscribe((data) => {
+    this.http.get<User[]>('/assets/users.json').subscribe((data) => {
       this.users = data;
     });
   }

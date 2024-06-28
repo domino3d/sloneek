@@ -15,14 +15,7 @@ import {
 
 import { SignalsService } from '@services/signals.service';
 import { TransactionsTableComponent } from '@components/transactions/transactions-table/transactions-table.component';
-
-export interface Transaction {
-  date?: Date;
-  info?: string;
-  value?: number;
-  category?: string;
-  type?: string;
-}
+import { Transaction } from '@app/models/transaction.model';
 
 @Component({
   selector: 'app-transactions',
@@ -64,8 +57,9 @@ export class TransactionsComponent implements OnInit {
         formValue.type === 'income'
           ? Math.abs(formValue.value)
           : -Math.abs(formValue.value);
-      const transaction = { ...formValue, value };
+      const transaction: Transaction = { ...formValue, value };
       this.signalsService.addTransaction(transaction);
+      // todo: could be function
       this.transactionForm.reset({
         date: '',
         info: '',

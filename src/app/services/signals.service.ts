@@ -1,13 +1,15 @@
 import { Injectable, signal } from '@angular/core';
+import { Transaction } from '@models/transaction.model';
+import { User } from '@app/models/user.model';
 import { Category } from '@models/category.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SignalsService {
-  transactions = signal<any[]>([]);
+  transactions = signal<Transaction[]>([]);
   categories = signal<string[]>(Object.values(Category));
-  user = signal<any>(null);
+  user = signal<User | null>(null);
 
   constructor() {
     this.loadTransactions();
@@ -15,7 +17,7 @@ export class SignalsService {
     this.loadUser();
   }
 
-  addTransaction(transaction: any) {
+  addTransaction(transaction: Transaction) {
     const currentTransactions = this.transactions();
     this.transactions.set([...currentTransactions, transaction]);
     this.saveTransactions();
@@ -55,7 +57,7 @@ export class SignalsService {
     }
   }
 
-  saveUser(user: any) {
+  saveUser(user: User | null) {
     this.user.set(user);
     localStorage.setItem('user', JSON.stringify(user));
   }
