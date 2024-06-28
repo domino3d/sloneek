@@ -1,5 +1,9 @@
 # Expenses Tracker
 
+## TLDR: 
+https://stackblitz.com/~/github.com/domino3d/sloneek
+admin/admin
+
 ## Overview
 
 Expenses Tracker is a simple web application developed using Angular. It allows users to manage their budget by recording expenses and incomes, defining categories, and viewing recorded transactions. The application uses Angular Material for the UI components and Angular Signals for state management. All data is stored locally in the browser's `localStorage`, and no backend server is required.
