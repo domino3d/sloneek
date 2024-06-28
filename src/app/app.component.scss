@@ -4,6 +4,9 @@ mat-toolbar {
   left: 0;
   right: 0;
   z-index: 1000;
+  background-color: grey;
+  background-image: linear-gradient(to right, #3dd7bf, #381d66);
+  box-shadow: 0px 8px 12px 0px grey;
 }
 
 .spacer {
@@ -20,17 +23,10 @@ nav {
   a:last-child {
     font-weight: bold;
   }
-}
-
-nav a.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-mat-toolbar {
-  background-color: grey;
-  background-image: linear-gradient(to right, #3dd7bf, #381d66);
-  box-shadow: 0px 8px 12px 0px grey;
+  a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
 }
 
 .layout {
@@ -42,4 +38,13 @@ mat-toolbar {
   width: 36px;
   height: 36px;
   margin-right: 8px;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  top: 55px !important;
 }
